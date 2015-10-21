@@ -1,0 +1,25 @@
+<div class="form">
+  <h3>Project Overview</h3>
+  <form>
+    <ul class="errors">
+    </ul>
+    <input type="text" placeholder="Title" class="form-control" aria-describedby="sizing-addon1"
+    name="title" value="<%= project.escape("title") %>">
+    <textarea class="form-control" placeholder="Description" aria-describedby="sizing-addon1"
+    name="description"><%= project.escape("description") %>
+    </textarea>
+
+    <input
+      type="text" placeholder="Status" class="form-control" aria-describedby="sizing-addon1"
+      name="status"
+      value="<%= project.escape("progress") %>"
+    >
+
+    <div class="progress">
+      Progress
+    </div>
+    <div class="stage"></div>
+    <div id="assignees-stage"></div>
+  </form>
+
+</div>

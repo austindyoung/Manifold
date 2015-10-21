@@ -1,0 +1,25 @@
+<h1>Sign In</h1>
+
+<body class="login">
+
+<form class="sign-in" action="/session" method="post">
+<h3 class="app-name">Manifold</h3>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div class="input">
+  <label>Email:
+    <input class="landing" value="guest@example.com" name="user[email]"
+           type="text">
+  </label>
+  </div>
+  <div class="input">
+  <label>Password:
+    <input class="landing" value="aaaaaa" name="user[password]"
+           type="password">
+  </label>
+  </div>
+  <div class="submit">
+    <input type="submit" value="Log In">
+  </div>
+  <div>Not a member? <a href="<%= new_user_url %>">Sign Up</a></div>
+</form>
+</body>

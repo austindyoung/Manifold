@@ -1,0 +1,156 @@
+// #workspaces {
+//   display: inline-block;
+// }
+
+// #workspaces {
+//   height: 500px;
+//   padding: 10px;
+//
+// }
+
+.add-button-projects {
+  padding: 2px;
+  font-size: 15px;
+  margin-left: 40px;
+  cursor: pointer;
+  text-align: center;
+  width: 20px;
+
+}
+
+.add-button-projects:hover {
+  // background-color: gray;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding: 1px;
+  color: blue;
+
+}
+
+.sidebar-header-item {
+  width: 10px;
+  margin: 3px;
+  padding-top: 20px;
+  padding-left: 45px;
+
+}
+.navbar.navbar-default.project h2 {
+  text-align: center;
+}
+
+.workspace-heading {
+  width: 200px;
+  padding: 10px;
+  height: 200px;
+  border: 1px solid #B9C7C1;
+  margin: 25px;
+  border-radius: 3px;
+  display: inline-block;
+  background: #DFE6E8;
+  cursor: pointer;
+
+  overflow: scroll;
+}
+
+// .workspace-item {
+//   padding: 0px;
+//   margin: 0px;
+//   border-radius: 5px;
+// }
+
+
+// .user {
+//   display: inline-block;
+//   width: 45px;
+//   height: 45px;
+//   padding: 3px;
+//   border: 3px solid navy;
+//   margin: 0px;
+// }
+
+.ws-title {
+  padding: 10px;
+}
+
+.ws-title h3 {
+  text-align: center;
+  top: 3px;
+}
+
+// #workspaces {
+//   background-image: image-url('paper_back_lined.jpg');
+//   background-size: 100%;
+//   background-size: cover;
+// }
+
+.create-workspace:hover {
+  color: green;
+  font-weight: 1500;
+}
+
+#projects-index {
+  cursor: pointer;
+}
+
+.project-show {
+  // float: left;
+  // width: 85%;
+  overflow: hidden;
+}
+
+.workspace-heading:hover{
+  background: #DFE8E4;
+  border: 1px dashed #B9C7C1;
+}
+
+
+.my-nav.workspace {
+  // bottom-margin: 1px;
+  border: 1px solid #C3D7DE;
+  background: #E4EBED;
+  margin-top: 1px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  width: 2000px;
+  // margin-bottom: 50px;
+  //
+}
+
+#project {
+  float: left;
+  margin: 20px;
+  width: 100%;
+}
+
+
+#projects-sidebar {
+  background: #E4EBED;
+  float: left;
+  width: 190px;
+
+  // height: 500px;
+  // min-height: 379px;
+  min-height: 900px;
+  padding: 0px;
+  border: 1px solid gray;
+  margin: 0px;
+  border-radius: 0px;
+  // padding-bottom: 5px;
+  // height: auto;
+}
+
+
+#project-sidebar-heading {
+  // display: inline-block;
+  margin: 0px;
+  width: 100%;
+  height: 74px;
+  border-bottom: 1px solid #C3D7DE;
+  // border-left: 1px solid gray;
+  // border-radius: 2px;
+  // min-height: 379px;
+}
+
+#content-sidebar {
+  // padding-bottom: 10px;
+}

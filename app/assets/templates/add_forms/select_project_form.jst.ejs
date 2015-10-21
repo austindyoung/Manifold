@@ -1,0 +1,6 @@
+
+  <% resultsArray.forEach(function (project) { %>
+    <li class="project-result" data-id="<%= project.attributes.id %>">
+      <%= project.attributes.title%>
+    </li>
+  <% }); %>

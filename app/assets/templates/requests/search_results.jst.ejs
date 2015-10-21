@@ -1,0 +1,10 @@
+<div class="m-background"></div>
+
+<ul class="m-content list-group">
+  <% users.each(function (user) { %>
+    <li class="user list-group-item" data-id="<%= user.attributes.id %>">
+      <%= user.attributes.fname + " " + user.attributes.mname + " " + user.attributes.lname + " | " + user.attributes.email%>
+    </li>
+  <% }); %>
+  </ul>
+</div>

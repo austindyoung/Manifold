@@ -1,0 +1,39 @@
+<div class="form-group-side">
+  <div class-"form-portion">
+  <h4>Task Details</h4>
+  <h1></h1>
+  <form>
+    <ul class="errors">
+    </ul>
+    <input
+      class="form-control"
+      placeholder="New Task"
+      type="text"
+      name="title"
+      value="<%= task.heading %>"
+    >
+<!--
+    <input
+    class="form-control"
+    placeholder="Description"
+    name="description"
+    value="<%= task.desc %>"
+    > -->
+    <textarea class="form-control" placeholder="Description" aria-describedby="sizing-addon1"
+    name="description" value="<%= task.desc %>">
+    </textarea>
+    <input
+      class="form-control"
+      placeholder="Due Date"
+      type="text"
+      name="due_date"
+      value="<%= task.due_date %>"
+    >
+  </form>
+  <button class="btn btn-default task-side edit-task">Edit
+  </button>
+  <div class="assignees btn-group" role="group">
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,39 @@
+
+
+<h1>Sign Up</h1>
+<body class="signup">
+<form class="sign-in" action="/users" method="post">
+  <h3 class="app-name">Manifold</h3>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div class="input">
+    <label>First Name
+      <input class="landing" name="user[fname]" type="text">
+    </label>
+  </div>
+  <div class="input">
+    <label>Middle Name
+      <input class="landing" name="user[mname]" type="text">
+    </label>
+  </div>
+  <div class="input">
+    <label>Last Name
+      <input class="landing" name="user[lname]" type="text">
+    </label>
+  </div>
+  <div class="input">
+    <label>Email
+      <input class="landing" name="user[email]" type="text">
+    </label>
+  </div>
+  <div class="input">
+    <label>Password
+      <input class="landing" name="user[password]" type="password"><br>
+    </label>
+  </div>
+  <div class="submit">
+    <input type="submit" value="Sign Up"><br>
+  </div>
+  <div class="switch">Already a member? <a href="<%= new_session_url %>">Log In</a></div>
+</form>
+
+</body>

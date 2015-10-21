@@ -1,0 +1,22 @@
+<div class="dropdown" id="requests-menu">
+<ul class="dropdown-menu" id="requests">
+  <a href="#" class="dropdown-toggle"
+    data-toggle="dropdown"
+    role="button"
+    aria-haspopup="true"
+    aria-expanded="true">Requests<span class="caret"></span>
+  </a>
+
+  <% requests.each(function (request) { %>
+  <li class="request">
+    <div class="user"></div>
+    <button type="button"
+    data-request-id="<%=request.attributes.requester_id%>"
+    data-accept-id="<%=request.attributes.requestee_id%>"
+    data-organization-id="<%=request.attributes.organization_id%>"
+    class="btn btn-default accept-satnam" > Accept
+    </button>
+  </li>
+  <% }); %>
+</ul>
+</div>

@@ -1,0 +1,289 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+a {
+  cursor: pointer;
+}
+
+ .app-name {
+   font-size: 40px;
+   position: relative;
+   color: #8F9EB5;
+   left: 65px;
+  margin-top: -30px;
+ }
+
+ .project-show {
+
+ }
+.list-group-item:active {
+  background: black;
+}
+
+// .navbar-brand.add-project {
+//   padding-left: 78px;
+// }
+
+.list-header {
+  font-weight: 1600;
+}
+.m-content.task{
+  width: 300px;
+}
+.list-group-item:hover {
+  background: gray;
+}
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+
+.member-heading {
+  color: transparent;
+}
+
+
+
+// .member-heading:hover {
+//   color: white;
+// }
+
+ html, form, h1, label {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font: inherit;
+   vertical-align: baseline;
+   font-family: "Oxygen";
+ }
+
+ textarea {
+   z-index: 100000px;
+ }
+
+ body {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font: inherit;
+   vertical-align: baseline;
+   font-family: "Oxygen";
+   background-image: image-url('dog.jpg');
+   background-size: 50%;
+   //
+   background-size: cover;
+ }
+
+ .content {
+   background-image: image-url('paper_back_lined.jpg');
+   background-size: 100%;
+   background-size: cover;
+ }
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.user-result {
+  cursor: pointer;
+}
+
+.user-result:hover {
+  cursor: pointer;
+  background: gray;
+}
+
+ .user {
+   cursor: pointer;
+   margin: 0px;
+   height: 42px;
+   width: 42px;
+  //  height: 45px;
+  //  width: 45px;
+  //  padding-top: 0px;
+  //  padding-left: 0px;
+
+ }
+
+ .thumbnail-name {
+   opacity: 0;
+ }
+ // .thumbnail-name:hover {
+ //   bottom-margin: -50px;
+ //   opacity: 1;
+ // }
+ //
+ // .user:hover {
+ //   height: 45px;
+ //   width: 45px;
+ //
+ //  //  height: 50px;
+ //  //  width: 50px;
+ //
+ // }
+
+ .project-result {
+   cursor: pointer;
+ }
+//
+ .user-item {
+   margin-top: -20px;
+   font-weight: 900;
+  //  float: left;
+  //  top: 0px;
+  //  opacity: 0;
+    color: black;
+    font-family: "Oxygen"
+}
+
+//  .user-item:hover {
+//    font-weight: 900;
+//   //  float: left;
+//    margin-top: -20px;
+//    opacity: 1;
+//     color: black;
+//     font-family: "Oxygen"
+// }
+
+ // input[type="text"],
+ // input[type="password"],
+ // input[type="email"],
+ // input[type="submit"] {
+ //   -webkit-appearance: none;
+ //   display: inline-block;
+ //   box-sizing: content-box;
+ //   margin: 0;
+ //   padding: 0;
+ //   border: 0;
+ //   outline: 0;
+ //   width: auto;
+ //   font: inherit;
+ //   vertical-align: baseline;
+ //   background: transparent;
+ //   color: inherit;
+ // }
+ //
+ input.landing {
+   float: right;
+ }
+ input[type="submit"] {
+   display: inline;
+   cursor: pointer;
+ }
+ // body {
+ //   padding: 0;
+ //   font-family: sans-serif;
+ //  //  background: #ddd;
+ //  background: green;
+ // }
+ .switch {
+   margin: 20px;
+ }
+
+ .sign-in {
+   font-size: 16px;
+   width: 400px;
+   margin: auto;
+   padding: 50px;
+   background: white;
+   border-radius: 5px;
+ }
+ .sign-in h1 {
+   font-weight: bold;
+   font-size: 60px;
+   line-height: 1.0;
+ }
+ .input {
+   margin: 20px 0;
+ }
+ .input > label {
+   display: block;
+   font-weight: bold;
+ }
+ .input > input {
+   display: block;
+   border: 2px solid black;
+   padding: 5px;
+   width: 286px;
+   border-radius: 5px;
+ }
+ .input > input:focus {
+   border-color: #0c0;
+ }
+ .submit {
+ }
+ .submit > input {
+   position: relative;
+   display: inline-block;
+   padding: 10px 20px;
+   font-weight: bold;
+  //  background: #0c0;
+   background: #008080;
+   color: white;
+   box-shadow: 0 3px 0 0 #070;
+   border-radius: 5px;
+ }
+ .submit > input:hover {
+   background: #0b0;
+ }
+ .submit > input:active {
+   top: 3px;
+   box-shadow: none;
+   background: #0a0;
+ }
+
+ .form-control {
+   opacity: 1;
+ }
+
+ body.main {
+   background-color: #000;
+ }
+
+ body.login {
+   background-image: image-url('working_background.jpg');
+   background-size: 100%;
+ 	background-size: cover;
+ }
+
+
+ body.signup {
+   background-image: image-url('working_background.jpg');
+   background-size: 100%;
+   background-size: cover;
+ }
+
+
+ .m-background {
+  background: rgba(92, 88, 88, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.m-content {
+  z-index: 2;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: white;
+  padding: 1pc;
+  border: 1px solid;
+  border-radius: 5px;
+}

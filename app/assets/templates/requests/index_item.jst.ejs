@@ -1,0 +1,13 @@
+<li class="request">
+  <div class="request">
+    <%=request.attributes.fname + " " + request.attributes.mname + " " + request.attributes.lname + " " + request.attributes.email + " wants to join " + request.attributes.organization%>
+  </div>
+  <button type="button"
+  data-request-id="<%=request.attributes.requester_id%>"
+  data-accept-id="<%=request.attributes.requestee_id%>"
+  data-organization-id="<%=request.attributes.organization_id%>"
+  class="btn btn-default accept" >Accept
+  </button>
+  <button type="button" class="btn btn-default reject">Reject
+  </button>
+</li>

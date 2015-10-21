@@ -1,0 +1,63 @@
+<div id="task-form">
+
+</div>
+
+<nav class="my-nav project">
+  <div class="container-fluid">
+    <div class="navbar-header project">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand cont"><%=project.attributes.title%></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav">
+       <li id="add-dropdown" class="dropdown">
+
+         <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+           +
+         </button>
+
+         <ul class="dropdown-menu multi-level" aria-labelledby="dropdownMenu1">
+           <% if(member_of_project) { %>
+           <li class="add-user"><a>user</a></li>
+           <%}%>
+           <li class="dropdown-submenu"><a>to workspace</a>
+           </li>
+         </ul>
+
+       </li>
+       <li><a><div id="team-members" class="btn-group" role="group" aria-label="...">
+
+       </div></a></li>
+
+
+    <li>
+  </li>
+  <% if(!in_org) {%>
+    <li id="organization-ref"><a href="<%="#/organizations/" + project.attributes.organization_id%>">
+      <%=project.attributes.organization.title%>
+    </a></li>
+    <%}%>
+  </ul>
+  </div>
+</div>
+</nav>
+
+<div id="project-body">
+  <div class="project-tasks">
+  <h4>Tasks</h4>
+
+    <ul id="tasks">
+
+    </ul>
+
+  </div>
+
+  <div id="project-overview">
+
+  </div>
+</div>

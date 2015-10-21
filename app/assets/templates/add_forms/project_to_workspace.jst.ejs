@@ -1,0 +1,18 @@
+<!-- <ul aria-labelledby="dropdownMenu1"> -->
+
+    <% workspaces.each(function (workspace) { %>
+      <%if (!currentWorkspace || currentWorkspace.id !== workspace.id) {%>
+      <li class="workspace-item list-group-item" data-id="<%= workspace.id %>">
+            <%= workspace.escape("title") %>
+      </li>
+      <% } %>
+      <!--  else if (!currentWorkspace && !workspace.attributes.projects.map(function(el) {
+      return el.id
+      }).includes(model.id)) {
+        <li class="workspace-item list-group-item" data-id="<%= workspace.id %>">
+              workspace.escape("title")
+        </li>
+        } -->
+    <% }); %>
+  <!-- </ul> -->
+<!-- </div> -->

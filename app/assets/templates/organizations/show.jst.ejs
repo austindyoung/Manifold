@@ -1,0 +1,77 @@
+
+
+
+<div class="cont">
+
+
+<div id="organization-sidebar">
+  <div class="row" id="project-sidebar-heading">
+    <div class="sidebar-header-item"><h4 id="projects-index">Projects</h4></div>
+    <div class="sidebar-header-item">
+    </div>
+  </div>
+    <div id="content-sidebar">
+    </div>
+</div>
+
+
+
+<div class="organization-show">
+
+
+
+<!-- class="navbar navbar-default project" -->
+  <nav class="my-nav organization">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand cont" href="<%= "#/organizations/" + organization.escape('id') %>"><%= organization.escape('title') %></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
+
+          <li>
+                <li id="add-dropdown" class="dropdown">
+
+                  <button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    +
+                  </button>
+
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li class="add-user-org"><a>add user</a></li>
+                    <li class="create-project"><a>create project</a>
+                    </li>
+                  </ul>
+
+                </li>
+
+
+              <!-- <button type="button" class="create-project btn btn-default">Create Project</button>
+              <button type="button" class="add-user-org btn btn-default">Add User</button> -->
+              <div class="input-group search">
+                <span class="input-group-addon search-class" id="basic-addon2">project</span>
+                <input type="text" class="form-control main-search" aria-describedby="basic-addon2">
+              </div>
+            </div>
+          <div class="btn-group" id="members" role="group" aria-label="...">
+
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  <!-- </div> -->
+  </nav>
+
+
+<div id="projectt">
+</div>
+
+</div>
+</div>

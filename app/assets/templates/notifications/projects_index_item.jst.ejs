@@ -1,0 +1,10 @@
+<li class="membership-notification">
+  <div class="membership-notifiction">
+    <%=notification.attributes.fname + " " + notification.attributes.mname + " " + notification.attributes.lname + " " + notification.attributes.email + " added you to " + notification.attributes.organization%>
+  </div>
+  <button type="button"
+  data-notification-id="<%=notification.attributes.adder_id%>"
+  data-project-id="<%=notification.attributes.project_id%>"
+  class="btn btn-default accept">Delete
+  </button>
+</li>

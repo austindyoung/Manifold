@@ -1,0 +1,28 @@
+<div class="form-group-side">
+  <h4>Task Details</h4>
+  <form>
+    <ul class="errors">
+    </ul>
+    <input
+      class="form-control"
+      placeholder="New Task"
+      type="text"
+      name="title"
+      value="<%= task.escape("title") %>"
+    >
+
+    <input
+    class="form-control"
+    placeholder="Description"
+    name="description"
+    value="<%= task.escape("description") %>"
+    >
+    <input
+      class="form-control"
+      placeholder="Due Date"
+      type="text"
+      name="due_date"
+      value="<%= task.escape("title") %>"
+    >
+  </form>
+</div>

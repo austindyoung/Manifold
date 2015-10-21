@@ -1,0 +1,21 @@
+<!-- <div class="m-content"> -->
+  <form>
+    <h4>Task Details</h4>
+    <ul class="errors">
+    </ul>
+
+    <input type="text" placeholder="Title" class="form-control" aria-describedby="sizing-addon1"
+    name="title" value="<%= task.escape("title") %>">
+
+    <textarea class="form-control" placeholder="Description" aria-describedby="sizing-addon1"
+    name="description"><%= task.escape("description") %>
+    </textarea>
+    <input
+      type="text" placeholder="Status" class="form-control" aria-describedby="sizing-addon1"
+      name="status"
+      value=""
+    >
+    <input type="submit" class="btn btn-default">
+  </form>
+
+<!-- </div> -->

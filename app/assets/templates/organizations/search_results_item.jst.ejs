@@ -1,0 +1,9 @@
+<li class="results-item">
+  <div class="title"><%=organization.attributes.title%></div>
+  <%if(!organization.attributes.current_user_org_ids.includes(organization.attributes.id)) {%>
+  <button type="button"
+    data-id="<%=organization.attributes.id%>"
+    class="btn btn-default join" >Join!
+  </button>
+  <%}%>
+</li>

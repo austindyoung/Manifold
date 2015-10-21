@@ -1,0 +1,16 @@
+<div class='organizations-index-title'>
+  <h3>My organizations</h3>
+</div>
+
+<ul class='organizations list-group'>
+  <% organizations.each(function (organization) { %>
+    <li class="list-group-item">
+      <a href="#/organizations/<%= organization.id %>">
+        <span class='shadow'></span>
+        <span class='details'>
+          <%= organization.escape("title") %>
+        </span>
+      </a>
+    </li>
+  <% }); %>
+</ul>

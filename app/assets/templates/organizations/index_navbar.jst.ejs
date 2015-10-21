@@ -1,0 +1,16 @@
+
+  <% organizations.each(function (organization) { %>
+    <li class="list-group-item">
+      <a href="#/organizations/<%= organization.id %>">
+          <%= organization.escape("title") %>
+      </a>
+    </li>
+  <% }); %>
+  <li class="list-group-item">
+    <div class="create-org">
+      +
+    </div>
+  </li>
+
+  <!-- <li><button type="button" class="create-organization btn btn-default">+</button>
+  </li> -->

@@ -1,0 +1,7 @@
+<!-- <div class="m-background"></div> -->
+
+  <% resultsArray.forEach(function (user) { %>
+    <li class="list-group-item user-result" data-id="<%= user.attributes.id %>">
+      <%= user.attributes.fname + " " + user.attributes.mname + " " + user.attributes.lname + " | " + user.attributes.email%>
+    </li>
+  <% }); %>

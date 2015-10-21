@@ -1,0 +1,38 @@
+
+<div class="m-background">
+
+</div>
+
+<div class="m-content task">
+<div class="form-group">
+  <form class="task-form">
+    <ul class="errors">
+    </ul>
+    <input
+      class="form-control"
+      placeholder="New Task"
+      type="text"
+      name="title"
+      value="<%= task.escape("title") %>"
+    >
+
+
+    <textarea class="form-control" placeholder="Description" aria-describedby="sizing-addon1"
+    name="description" value="<%= task.escape("description") %>">
+    </textarea>
+
+    <div class="stage"></div>
+    <div id="assignees-stage"></div>
+
+
+    <input
+      class="form-control"
+      placeholder="Due Date"
+      type="date"
+      name="due_date"
+    >
+
+    <input type="submit" value="+" class="btn btn-default task-main-form">
+  </form>
+</div>
+</div>
