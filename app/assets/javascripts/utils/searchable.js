@@ -31,24 +31,9 @@ Backbone.Searchable = Backbone.Collection.extend({
         // debugger
         return this.autoCondition(model, regex);
       }.bind(this)
-  )};
-  //   prefix = prefix.toLowerCase();
-  //   var partition = prefix.split(" ");
-  //   if (partition[partition.length - 1] === "") {
-  //     partition.pop();
-  //   }
-  //   var fname = partition[0];
-  //   var results = this.select(function (model) {
-  //     if (partition.length === 1) {
-  //       return model.attributes.fname.toLowerCase().match("^" + partition[0]);
-  //    } else if (partition.length === 2) {
-  //       return model.attributes.fname.toLowerCase().match("^" + partition[0]) && model.attributes.lname.toLowerCase().match("^" + partition[1]);
-  //    } else if (model.attributes.mname){
-  //       return model.attributes.fname.toLowerCase().match("^" + partition[0]) && model.attributes.mname.toLowerCase().match("^" + partition[1]) && model.attributes.lname.toLowerCase().match("^" + partition[2]);
-  //    }
-  //  });
-  // return results[0];
+    )}
   },
+
 
   select: function (condition) {
     var selected = [];

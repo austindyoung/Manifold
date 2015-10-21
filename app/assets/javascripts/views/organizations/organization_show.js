@@ -13,6 +13,9 @@ Manifold.Views.OrganizationShow = Backbone.CompositeView.extend({
         $('#content-sidebar').empty();
       if ($('.input-group-addon').text() == "project") {
         this.projectsArr = this.collection.filter($(event.target).val());
+        if (this.projectsArr.length === 0) {
+          this.projectsArr = this.collection.models;
+        }
         this.renderProjects();
       } else {
         var users = new Manifold.Collections.Users();

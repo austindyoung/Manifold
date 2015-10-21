@@ -5,10 +5,10 @@ Manifold.Collections.Projects = Backbone.Searchable.extend({
     // debugger
      return this.display(model).match(regex);
   },
-  //
-  // display: function (model) {
-  //   return model.attributes.title.toLowerCase().replace(/  /, " ");
-  // },
+
+  display: function (model) {
+    return model.attributes.title.toLowerCase().replace(/  /, " ");
+  },
 
   // filter: function (prefix) {
   //   prefix = prefix.toLowerCase();

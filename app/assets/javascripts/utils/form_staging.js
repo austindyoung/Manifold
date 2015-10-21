@@ -15,30 +15,29 @@
     $input_element.attr('type', 'text');
     $input_element.attr('name', 'assignee');
     $input_element.attr('placeholder', settings.placeholder);
-    $input_element.addClass('form-control assignee');
+    $input_element.addClass('form-control element');
     $input_element.data('collection', []);
 
 
     var $span = $('<span>+</span>');
     $span.addClass('btn input-group-addon');
-    $span.attr('id', 'assignee-stager');
+    $span.attr('id', 'element-stager');
     $stager.append($input_element);
     $stager.append($span);
 
     this.find('.stage').append($stager);
 
-    this.find('#assignee-stager').on('click', function () {
+    this.find('#element-stager').on('click', function () {
       this.stage(view, settings.display, settings.identifier);
     }.bind(this));
 
     this.on('keyup', function (event) {
       // event.preventDefault();
       var code = event.keyCode || event.which
-      if ($(document.activeElement).attr("class") === "form-control assignee" && code == 40) {
+      if ($(document.activeElement).attr("class") === "form-control element" && code == 40) {
         this.stage(view, settings.display, settings.identifier);
-      } else if ($(document.activeElement).attr("class") === "form-control assignee") {
+      } else if ($(document.activeElement).attr("class") === "form-control element") {
         // event.preventDefault();
-// debugger
         var completed = this.adder(event, view, collection, settings.filterCondition, settings.display);
 
         this.find('.list').empty();
@@ -55,6 +54,9 @@
         var fragment = $(event.target).val().slice(0, view.cursorPosition).toLowerCase();
         console.log(fragment);
         var resultsArray = collection.filter(fragment);
+        if (settings.comparator) {
+          resultsArry.sort(comparator);
+        }
         //sort
 
         if (resultsArray.length === 0) {
@@ -94,7 +96,7 @@
           this.find('.stage').append($results);
         }
         $list.on('click', function (event) {
-          this.find('input.assignee').data('buffer', $(event.target).data());
+          this.find('input.element').data('buffer', $(event.target).data());
           this.stage(view, settings.display, settings.identifier);
         }.bind(this))
       }
@@ -111,29 +113,29 @@
     this.find('#results').remove();
     view.cursorPosition = 0;
 
-    var $input = this.find('input.assignee')
-    var $buff = this.find('input.assignee').data('buffer');
+    var $input = this.find('input.element')
+    var $buff = this.find('input.element').data('buffer');
     var collection = $input.data('collection');
     collection.push($buff);
     $input.data('collection', collection);
-    var $nextAssignee = $('<div></div>');
-    $nextAssignee.addClass('staged-element');
-    $nextAssignee.text(identifier($buff));
+    var $nextElement = $('<div></div>');
+    $nextElement.addClass('staged-element');
+    $nextElement.text(identifier($buff));
     this.find('.remover').remove();
     var $remover = $('<button>x</button>');
     $remover.css('margin', '3px');
     $remover.addClass('remover btn btn-default btn-xs');
-    $nextAssignee.append($remover);
+    $nextElement.append($remover);
 
-    this.find('#assignees-stage').prepend($nextAssignee);
-    this.find('input.assignee').val('');
+    this.find('#elements-stage').prepend($nextElement);
+    this.find('input.element').val('');
     this.find('.remover').on('click', function () {
       this.remover();
     }.bind(this))
   };
 
   $.fn.remover = function () {
-    this.find('input.assignee').data('collection').pop();
+    this.find('input.element').data('collection').pop();
     this.find('.staged-element')[0].remove();
     var $remover = $('<button>x</button>');
     $remover.css('margin', '3px');
@@ -147,7 +149,7 @@
   $.fn.adder = function (event, view, collection, filterCondition) {
     // event.preventDefault();
     var code = event.keyCode || event.which
-    var $target = this.find("input.assignee")
+    var $target = this.find("input.element")
     if (code === 8) {
       view.cursorPosition = view.cursorPosition - 1;
     } else {
@@ -168,23 +170,23 @@
     }
     var cursorPosition = view.cursorPosition;
     } if (result) {
-      this.find('input.assignee').data('buffer', result);
+      this.find('input.element').data('buffer', result);
     }
-    this.find('input.assignee').setCursorPosition(view.cursorPosition);
+    this.find('input.element').setCursorPosition(view.cursorPosition);
     return result;
   };
 
   $.fn.submit = function (event, view, submit, extra, type, collectionName, primaryKey, foreignKey, modelType, show) {
     event.preventDefault();
-    var $input = this.find('input.assignee');
+    var $input = this.find('input.element');
     var attrs = this.find('form').serializeJSON();
 
     // var assignee_ids = JSON.parse(attrs.assignee_ids);
-    var assignee_ids = $input.data('collection');
+    var collection = $input.data('collection');
 
-    var numAssignees = assignee_ids.length;
+    var numElements = collection.length;
     var count = 0;
-    delete attrs.assignee_ids;
+    // delete attrs.assignee_ids;
     view.attrs = attrs
     view.attrs[collectionName] = [];
     view.attrs = attrs
@@ -197,16 +199,16 @@
       // view.attrs['collectionName'] = assignee_ids;
     var success = function (model) {
       view.attrs.id = model.id;
-      for (var i = 0; i < assignee_ids.length; i++) {
-        var last = i === assignee_ids.length - 1;
-        var assignee_id = assignee_ids[i];
+      for (var i = 0; i < collection.length; i++) {
+        var last = i === collection.length - 1;
+        var el = collection[i];
         if (submit) {
-          // submit(assignee_id, i === assignee_ids.length - 1, model);
-          submit(assignee_id);
+
+          submit(el);
         } else if (show) {
-          var el = assignee_id;
+          // var el = assignee_id;
           var foreign = el.id;
-          if (assignee_id) {
+          if (el) {
             var primary = view.model.id;
             var keys = {};
             keys[primaryKey] = primary;
@@ -216,19 +218,19 @@
             view.attrs[collectionName].push(el);
             if (last) {
               model.attributes = view.attrs;
-              // view.collection.add(model);
+
             }
           }
-          // debugger
+
           model.fetch({
             success: function (model) {
               view.collection.add(model);
             }
           })
-          // view.collection.add(model);
+
           view.render();
         } else {
-          var el = assignee_id;
+          // var el = assignee_id;
           var foreign = el.id;
             var primary = view.model.id;
             var keys = {};
