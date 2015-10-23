@@ -39,8 +39,11 @@ Manifold.Views.ProjectSearchModal = Backbone.View.extend({
     //   adder_id: parseInt(Manifold.CURRENT_USER.id)
     // });
     // notification.save();
-
+    var $addButton = $('.add-button-projects');
+    $addButton.remove();
     $('#projects-sidebar').append(projectIndexItem.render().$el);
+    $('#projects-sidebar').append($addButton);
+
     this.remove();
     this.model.save();
   },
@@ -54,6 +57,7 @@ Manifold.Views.ProjectSearchModal = Backbone.View.extend({
   },
 
   attachResults: function (event) {
+    //highlight
     $('#results').empty();
     event.preventDefault();
     var fragment = $(event.target).serializeJSON().fragment;
