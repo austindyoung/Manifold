@@ -62,7 +62,6 @@ Manifold.Views.OrganizationShow = Backbone.CompositeView.extend({
 
     initialize: function (options) {
       $('body').css('background-color', 'rgb(240,240,240) ')
-      // this.collection = this.model.projects();
       this.collection = options.collection;
       this.projectsArr = this.collection.models.slice(0);
       this.workspaces = options.workspaces;
