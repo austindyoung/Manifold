@@ -1,6 +1,5 @@
 Manifold.Views.ProjectSearchModal = Backbone.View.extend({
   events: {
-    // 'submit form': 'renderSelectUserModal',
     "input input[type=text]": 'attachResults',
     'click .project-result': 'addProject',
     'click .m-background': 'removeForm'
@@ -33,12 +32,6 @@ Manifold.Views.ProjectSearchModal = Backbone.View.extend({
     var projectIndexItem = new Manifold.Views.ProjectIndexItem({
       model: project
     });
-    // var notification = new Manifold.Models.ProjectMembershipNotification({
-    //   user_id: selected_user_id,
-    //   project_id: project_id,
-    //   adder_id: parseInt(Manifold.CURRENT_USER.id)
-    // });
-    // notification.save();
     var $addButton = $('.add-button-projects');
     $addButton.remove();
     $('#projects-sidebar').append(projectIndexItem.render().$el);
@@ -57,7 +50,6 @@ Manifold.Views.ProjectSearchModal = Backbone.View.extend({
   },
 
   attachResults: function (event) {
-    //highlight
     $('#results').empty();
     event.preventDefault();
     var fragment = $(event.target).serializeJSON().fragment;
