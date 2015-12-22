@@ -15,10 +15,6 @@ Manifold.Views.OrganizationsIndex = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render);
   },
 
-  // creatOrganization: function () {
-  //   var org = new Manifold.Models.Organization({})
-  // },
-
   createOrganization: function () {
     console.log("create");
   },
@@ -27,7 +23,6 @@ Manifold.Views.OrganizationsIndex = Backbone.View.extend({
     var content = this.template({
       organizations: this.collection
     });
-    // todo: use the compositeview pattern
 
     this.$el.html(content);
     return this;
