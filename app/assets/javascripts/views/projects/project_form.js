@@ -5,13 +5,6 @@ Manifold.Views.ProjectForm = Backbone.View.extend({
 
   template: JST['projects/form'],
 
-  initialize: function(options) {
-    // this.model = options.model;
-    // this.collection = options.collection;
-    // this.parentDiv = options.parentDiv;
-    // this.listenTo(this.model, 'sync', this.render);
-  },
-
   render: function () {
     var renderedContent = this.template({
       project: this.model
@@ -33,10 +26,6 @@ Manifold.Views.ProjectForm = Backbone.View.extend({
         organization_id: this.model.get("organization_id")
       });
       this.render();
-      // Backbone.history.navigate(
-      //   '#/organizations/' + this.model.get("organization_id"),
-      //   { trigger: true }
-      // );
     }.bind(this);
 
     function errors(model, response) {
@@ -47,7 +36,6 @@ Manifold.Views.ProjectForm = Backbone.View.extend({
         $('.errors').append($li);
       }.bind(this));
     }
-    // also save membership model between creator and project
     this.model.save(attrs, {
       wait: true,
       success: success,
