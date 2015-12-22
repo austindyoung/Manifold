@@ -1,13 +1,8 @@
 Manifold.Views.AllNotifications = Backbone.CompositeView.extend({
   template: JST['notifications/all'],
-  // events: {
-  //
-  // },
 
   initialize: function (options) {
     this.listenTo(this.collection, 'add', this.addRequest);
-    // this.listenTo(this.requests, 'sync', this.render);
-    // this.listenTo(this.notifications, 'sync', this.render);
     this.requests = options.requests;
     this.notifications = options.notifications;
     this.project_notifications = options.notifications;
