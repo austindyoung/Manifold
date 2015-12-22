@@ -2,7 +2,6 @@ Manifold.Views.NavBar = Backbone.CompositeView.extend({
   template: JST['navbar/nav_bar'],
 
   initialize: function (options) {
-    // todo: can't use return value of fetch
     this.router = options.router;
     this.organizations = new Manifold.Collections.Organizations();
   },
@@ -11,8 +10,6 @@ Manifold.Views.NavBar = Backbone.CompositeView.extend({
   tagName: "nav",
 
   events: {
-    // "click #workspaces" : "navToWorkspaces",
-    // "click #organizations" : "navToOrganizations"
     "submit form": "search"
 
   },
@@ -23,11 +20,6 @@ Manifold.Views.NavBar = Backbone.CompositeView.extend({
     var fragment = this.$("input.form-control").val();
     Backbone.history.navigate("#search?fragment=" + fragment, {trigger: true});
 
-    // if (search !== "") {
-    //   this.organizations.fetch({ data: { search: search }});
-    //   this.renderResults();
-    // }
-    // this.render();
   },
 
   addResult: function (result) {
@@ -54,7 +46,6 @@ Manifold.Views.NavBar = Backbone.CompositeView.extend({
     this.$('#search-results-list')
     this.$el.find('#sign_out_auth_token')
             .val($('meta[name=csrf-token]').attr('content'));
-    // remove sortable
     return this;
   }
 
