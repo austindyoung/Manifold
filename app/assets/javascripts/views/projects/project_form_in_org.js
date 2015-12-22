@@ -6,13 +6,6 @@ Manifold.Views.ProjectFormInOrg = Backbone.View.extend({
 
   template: JST['projects/form_in_org'],
 
-  initialize: function(options) {
-    // this.model = options.model;
-    // this.collection = options.collection;
-    // this.parentDiv = options.parentDiv;
-    // this.listenTo(this.model, 'sync', this.render);
-  },
-
   render: function () {
     var renderedContent = this.template({
       project: this.model
@@ -24,9 +17,7 @@ Manifold.Views.ProjectFormInOrg = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    // var id = this.parentDiv.id
     var attrs = $(event.target).serializeJSON();
-    // attrs.organization_id = id
 
     var success = function () {
       this.collection.add(this.model);
@@ -34,10 +25,6 @@ Manifold.Views.ProjectFormInOrg = Backbone.View.extend({
         organization_id: this.model.get("organization_id")
       });
       this.render();
-      // Backbone.history.navigate(
-      //   '#/organizations/' + this.model.get("organization_id"),
-      //   { trigger: true }
-      // );
     }.bind(this);
 
     function errors(model, response) {
