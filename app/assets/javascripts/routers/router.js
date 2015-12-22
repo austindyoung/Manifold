@@ -46,16 +46,6 @@ Manifold.Routers.Router = Backbone.Router.extend({
   projectShow: function (id) {
     var project = new Manifold.Models.Project({ id: id });
 
-    // project.fetch();
-    //
-    // this.workspaces.fetch();
-    // this.users.fetch();
-    // var view = new Manifold.Views.ProjectShow({
-    //   model: project,
-    //   collection: this.workspaces,
-    //   users: this.users
-    // });
-
     project.fetch({
       success: function () {
         this.workspaces.fetch();
@@ -73,17 +63,13 @@ Manifold.Routers.Router = Backbone.Router.extend({
 
 
 
-    // this._swapView(view);
-    // this.renderOrganizations();
   },
 
   workspaceShow: function (id) {
-    // todo: fetch a new model
     var workspace = new Manifold.Models.Workspace({id: id});
     workspace.fetch();
     this.workspaces.fetch();
     this.users.fetch();
-    // var workspace = new Manifold.Collections.Workspaces().getOrFetch(id);
     var view = new Manifold.Views.WorkspaceShow({
       model: workspace,
       workspaces: this.workspaces,
@@ -98,7 +84,6 @@ Manifold.Routers.Router = Backbone.Router.extend({
     this.organizations.fetch();
     var view = new Manifold.Views.OrganizationsIndex({
       collection: this.organizations
-      // router: this.router
     });
 
     this._swapView(view);
@@ -106,7 +91,6 @@ Manifold.Routers.Router = Backbone.Router.extend({
   },
 
   organizationShow: function (id) {
-    // todo: fetch a new model
     var organization = new Manifold.Models.Organization({id: id})
     organization.fetch({
       success: function (model) {
@@ -152,10 +136,6 @@ Manifold.Routers.Router = Backbone.Router.extend({
       collection: this.workspaces
     });
     this._swapView(view);
-    // var orgDropdownView = new Manifold.Views.OrganizationsIndex({
-    //   collection: this.organizations
-    // })
-    // $('#organizations-dropdown').append(orgDropdownView.$el)
     this.renderOrganizations();
   },
 
@@ -163,9 +143,6 @@ Manifold.Routers.Router = Backbone.Router.extend({
     this.requests.fetch();
     this.notifications.fetch();
     this.project_notifications.fetch();
-    // var view = new Manifold.Views.MembershipRequestsIndex({
-    //   collection: this.requests
-    // });
     var view = new Manifold.Views.AllNotifications({
       requests: this.requests,
       notifications: this.notifications,
