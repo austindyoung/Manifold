@@ -30,22 +30,6 @@ Manifold.Views.UserToProjectForm = Backbone.View.extend({
     });
     notification.save();
     this.remove();
-    // var success = function () {
-    //   this.collection.add(this.model);
-    //   this.model = new Manifold.Models.Project({
-    //     organization_id: this.model.get("organization_id")
-    //   });
-    //   this.render();
-    // }.bind(this);
-    //
-    // function errors(model, response) {
-    //   $('.errors').empty();
-    //   response.responseJSON.forEach(function (el) {
-    //     var $li = $('<li></li>');
-    //     $li.text(el);
-    //     $('.errors').append($li);
-    //   }.bind(this));
-    // }
     this.model.save();
   },
 
@@ -82,60 +66,5 @@ Manifold.Views.UserToProjectForm = Backbone.View.extend({
       $('body').append(modal.$el);
       modal.render();
   },
-
-  // addUser: function (event) {
-  //   console.log("trying to add");
-  //   event.preventDefault();
-  //   var email = $(event.target).serializeJSON().email;
-  //   var user = this.users.findWhere({email: email});
-  //   this.model = new Manifold.Models.TeamMembership({
-  //     member_id: user.id,
-  //     project_id: this.model.id
-  //   });
-  //   // var success = function () {
-  //   //   this.collection.add(this.model);
-  //   //   this.model = new Manifold.Models.Project({
-  //   //     organization_id: this.model.get("organization_id")
-  //   //   });
-  //   //   this.render();
-  //   // }.bind(this);
-  //   //
-  //   // function errors(model, response) {
-  //   //   $('.errors').empty();
-  //   //   response.responseJSON.forEach(function (el) {
-  //   //     var $li = $('<li></li>');
-  //   //     $li.text(el);
-  //   //     $('.errors').append($li);
-  //   //   }.bind(this));
-  //   // }
-  //   this.model.save()
-  //   this.remove();
-  // }
-
-  // submit: function (event) {
-  //   event.preventDefault();
-  //   var attrs = $(event.target).serializeJSON();
-  //
-  //   var success = function () {
-  //     this.collection.add(this.model);
-  //     this.model = new Manifold.Models.Workspace({ user_id: Manifold.CURRENT_USER.id })
-  //     this.render();
-  //     //navigate
-  //   }.bind(this);
-  //
-  //   function errors(model, response) {
-  //     $('.errors').empty();
-  //     response.responseJSON.forEach(function (el) {
-  //       var $li = $('<li></li>');
-  //       $li.text(el);
-  //       $('.errors').append($li);
-  //     }.bind(this));
-  //   }
-  //
-  //   this.model.save(attrs, {
-  //     wait: true,
-  //     success: success,
-  //     error: errors.bind(this)
-  //   });
 
 });
